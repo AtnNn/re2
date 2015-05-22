@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <string>
-#include <pthread.h>
+//#include <pthread.h>
 #include <errno.h>
 #include "util/atomicops.h"
 #include "util/util.h"

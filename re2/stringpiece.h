@@ -24,6 +24,8 @@
 #include <iosfwd>
 #include <string>
 
+#include <algorithm>
+
 namespace re2 {
 
 class StringPiece {
@@ -77,7 +79,7 @@ class StringPiece {
   }
 
   int compare(const StringPiece& x) const {
-    int r = memcmp(ptr_, x.ptr_, min(length_, x.length_));
+    int r = memcmp(ptr_, x.ptr_, std::min(length_, x.length_));
     if (r == 0) {
       if (length_ < x.length_) r = -1;
       else if (length_ > x.length_) r = +1;
@@ -160,7 +162,7 @@ inline bool operator!=(const StringPiece& x, const StringPiece& y) {
 
 inline bool operator<(const StringPiece& x, const StringPiece& y) {
   const int r = memcmp(x.data(), y.data(),
-                       min(x.size(), y.size()));
+                       std::min(x.size(), y.size()));
   return ((r < 0) || ((r == 0) && (x.size() < y.size())));
 }
 

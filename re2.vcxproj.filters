@@ -75,13 +75,7 @@
     <ClCompile Include="re2\unicode_groups.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="util\benchmark.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="util\hash.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="util\pcre.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="util\random.cc">
@@ -146,9 +140,6 @@
     <ClInclude Include="util\atomicops.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="util\benchmark.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="util\flags.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -156,9 +147,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="util\mutex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="util\pcre.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="util\random.h">

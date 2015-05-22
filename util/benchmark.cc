@@ -25,10 +25,19 @@ void Benchmark::Register() {
 }
 
 static int64 nsec() {
+#ifndef WIN32
 	struct timeval tv;
 	if(gettimeofday(&tv, 0) < 0)
 		return -1;
 	return (int64)tv.tv_sec*1000*1000*1000 + tv.tv_usec*1000;
+#else
+	FILETIME time;
+	GetSystemTimePreciseAsFileTime(&time);
+	ULARGE_INTEGER nanos100;
+	nanos100.LowPart = time.dwLowDateTime;
+	nanos100.HighPart = time.dwHighDateTime;
+	return nanos100.QuadPart * 100;
+#endif
 }
 
 static int64 bytes;
