@@ -5,8 +5,6 @@
 #ifndef RE2_UTIL_THREAD_H__
 #define RE2_UTIL_THREAD_H__
 
-#include <pthread.h>
-
 class Thread {
  public:
   Thread();
@@ -17,7 +15,7 @@ class Thread {
   virtual void Run() = 0;
  
  private:
-  pthread_t pid_;
+  HANDLE pid_;
   bool running_;
   bool joinable_;
 };

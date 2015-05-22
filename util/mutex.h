@@ -14,8 +14,7 @@
 
 namespace re2 {
 
-#define HAVE_PTHREAD 1
-#define HAVE_RWLOCK 1
+#define WIN32 1
 
 #if defined(NO_THREADS)
   typedef int MutexType;      // to keep a lock-count
